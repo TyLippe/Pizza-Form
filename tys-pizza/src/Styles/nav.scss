@@ -1,18 +1,33 @@
 @import 'variables.scss';
 
 .navBar {
-    border: 1px white solid;
-    border-radius: 5px;
-    background-image: url('../Assets/nav-pizza.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-    h1{
-        font-family: 'Lobster', cursive;
-        font-size: 60px;
+    background-color: $darkTransparent;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    h1 {
+        font-family: $font;
+        font-size: 84px;
         color: $white;
-        padding: 0;
-        margin: 3%;
-        text-shadow: 2px 2px #ff0000;
+        text-shadow: 2px 2px $red;
+        margin: 0;
+    }
+    button {
+        cursor: pointer;
+        background-color: rgba(0,0,0,0);
+        padding: 0.5em 3em;
+        border: 1px solid $white;
+        border-radius: 10px;
+        margin: 0 0.3em 0.3em 0;
+        text-decoration: none;
+        font-family: $font;
+        font-size: 18px;
+        color: $white;
+        text-align: center;
+        &:hover {
+            box-shadow: 2px 2px $red;
+        }
     }
 }
