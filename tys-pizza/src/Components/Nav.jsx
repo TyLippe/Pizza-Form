@@ -1,4 +1,5 @@
 import React from 'react'
+import '../Styles/nav.scss'
 
 export default function NavBar() {
     return(
