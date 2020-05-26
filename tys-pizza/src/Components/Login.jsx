@@ -27,6 +27,8 @@ export default function Login() {
     
     const [buttonDisabled, setButtonDisabled] = useState(true)
 
+    const [isShown, setIsShown] = useState(false)
+
     useEffect(() => {
         formSchema.isValid(formData)
             .then(valid => {
@@ -65,12 +67,19 @@ export default function Login() {
                 })
             })
     }
-
+console.log(user)
     return(
         <div className='loginDiv'>
             <h2>Welcome Back</h2>
             <form className='loginForm' onSubmit={handleSubmit}>
                 <label>
+                <div className='xDiv'>
+                    {errors.email.length > 0 ? (<p 
+                                            className='error' 
+                                            onMouseEnter={() => setIsShown(true)}
+                                            onMouseLeave={() => setIsShown(false)}>
+                                            X</p>) : null}
+                    {isShown && errors.email.length > 0 && (<p className='errorMessage'>{errors.email}</p>)}
                     <input
                         id='emailInput'
                         type='string'
@@ -78,10 +87,19 @@ export default function Login() {
                         placeholder='Email'
                         value={formData.email}
                         onChange={handleChange}
+                        className={errors.email.length > 0 ? 'errorInput' : null}
                     />
+                </div>
                 </label>
-                {errors.email.length > 0 ? (<p className='error'>{errors.email}</p>) : null}
+
                 <label>
+                <div className='xDiv'>
+                    {errors.password.length > 0 ? (<p 
+                                            className='error' 
+                                            onMouseEnter={() => setIsShown(true)}
+                                            onMouseLeave={() => setIsShown(false)}>
+                                            X</p>) : null}
+                    {isShown && errors.password.length > 6 && (<p className='errorMessage'>{errors.password}</p>)}
                     <input
                         id='passwordInput'
                         type='password'
@@ -89,10 +107,12 @@ export default function Login() {
                         placeholder='Password'
                         value={formData.password}
                         onChange={handleChange}
+                        className={errors.password.length > 6 ? 'errorInput' : null}
                     />
+                </div>
                 </label>
-                {errors.password.length > 6 ? (<p className="error">{errors.password}</p>) : null}
-                <button disabled={buttonDisabled}>
+
+                <button disabled={buttonDisabled} className={buttonDisabled ? 'disabled' : 'active'}>
                     Log In
                 </button>
             </form>

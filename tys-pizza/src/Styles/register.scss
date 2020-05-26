@@ -56,7 +56,6 @@
         button {
             position: absolute;
             bottom: 0.5em;
-            cursor: pointer;
             background-color: rgba(0,0,0,0);
             padding: 0.5em 3em;
             border: 1px solid $white;
@@ -65,8 +64,14 @@
             text-decoration: none;
             font-family: $font;
             font-size: 16px;
-            color: $white;
             text-align: center;
+        }
+        .diabled {
+            cursor: default;
+        }
+        .active {
+            cursor: pointer;
+            color: $white;
             &:hover {
                 box-shadow: 2px 2px $red;
             }

@@ -23,6 +23,7 @@ const formSchema = yup.object().shape({
         .required('Please choose your State'),
     zip: yup
         .string()
+        .min(5, 'Please enter your 5 digit zip code')
         .required('Please enter your Zip Code')
 })
 
@@ -200,7 +201,7 @@ export default function Register() {
                 </div>
                 </label>
 
-                <button disabled={buttonDisabled}>
+                <button disabled={buttonDisabled} className={buttonDisabled ? 'disabled' : 'active'}>
                     Register
                 </button>
             </form>
