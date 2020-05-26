@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {useHistory} from 'react-router-dom'
 import states from '../Assets/states.json'
 import * as yup from 'yup'
 import '../Styles/register.scss'
@@ -28,6 +29,8 @@ const formSchema = yup.object().shape({
 })
 
 export default function Register() {
+    let history = useHistory()
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -71,6 +74,7 @@ export default function Register() {
     const handleSubmit = e => {
         e.preventDefault()
         setUser(formData)
+        history.push('/')
     }
 
     const validateForm = e => {

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {useHistory} from 'react-router-dom'
 import * as yup from 'yup'
 import '../Styles/login.scss'
 
@@ -13,6 +14,8 @@ const formSchema = yup.object().shape({
 })
 
 export default function Login() {
+    let history = useHistory()
+
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -48,6 +51,7 @@ export default function Login() {
     const handleSubmit = e => {
         e.preventDefault()
         setUser(formData)
+        history.push('/home')
     }
 
     const validateForm = e => {
