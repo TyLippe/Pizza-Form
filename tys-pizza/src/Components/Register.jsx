@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import states from '../Assets/states.json'
 import * as yup from 'yup'
 import '../Styles/register.scss'
 
@@ -48,6 +49,8 @@ export default function Register() {
     
     const [buttonDisabled, setButtonDisabled] = useState(true)
 
+    const [isShown, setIsShown] = useState(false)
+
     useEffect(() => {
         formSchema.isValid(formData)
             .then(valid => {
@@ -92,6 +95,13 @@ export default function Register() {
             <h2>Nice to meet you!</h2>
             <form className='registerForm' onSubmit={handleSubmit}>
                 <label>
+                <div className='xDiv'>
+                    {errors.name.length > 0 ? (<p 
+                                            className='error' 
+                                            onMouseEnter={() => setIsShown(true)}
+                                            onMouseLeave={() => setIsShown(false)}>
+                                            X</p>) : null}
+                    {isShown && errors.name.length > 0 && (<p className='errorMessage'>{errors.name}</p>)}
                     <input
                         id='nameInput'
                         type='string'
@@ -101,9 +111,17 @@ export default function Register() {
                         onChange={handleChange}
                         className={errors.name.length > 0 ? 'errorInput' : null}
                     />
+                </div>
                 </label>
-                {/* {errors.name.length > 0 ? (<p className='error'>{errors.name}</p>) : null} */}
+
                 <label>
+                <div className='xDiv'>
+                    {errors.email.length > 0 ? (<p 
+                                            className='error' 
+                                            onMouseEnter={() => setIsShown(true)}
+                                            onMouseLeave={() => setIsShown(false)}>
+                                            X</p>) : null}
+                    {isShown && errors.email.length > 0 && (<p className='errorMessage'>{errors.email}</p>)}
                     <input
                         id='emailInput'
                         type='string'
@@ -113,9 +131,17 @@ export default function Register() {
                         onChange={handleChange}
                         className={errors.email.length > 0 ? 'errorInput' : null}
                     />
+                </div>
                 </label>
-                {/* {errors.email.length > 0 ? (<p className='error'>{errors.email}</p>) : null} */}
+
                 <label>
+                <div className='xDiv'>
+                    {errors.password.length > 0 ? (<p 
+                                            className='error' 
+                                            onMouseEnter={() => setIsShown(true)}
+                                            onMouseLeave={() => setIsShown(false)}>
+                                            X</p>) : null}
+                    {isShown && errors.password.length > 6 && (<p className='errorMessage'>{errors.password}</p>)}
                     <input
                         id='passwordInput'
                         type='password'
@@ -123,10 +149,19 @@ export default function Register() {
                         placeholder='Password'
                         value={formData.password}
                         onChange={handleChange}
-                    />
+                        className={errors.password.length > 6 ? 'errorInput' : null}
+                        />
+                </div>
                 </label>
-                {errors.password.length > 6 ? (<p className="error">{errors.password}</p>) : null}
+
                 <label>
+                <div className='xDiv'>
+                    {errors.city.length > 0 ? (<p 
+                                            className='error' 
+                                            onMouseEnter={() => setIsShown(true)}
+                                            onMouseLeave={() => setIsShown(false)}>
+                                            X</p>) : null}
+                    {isShown && errors.city.length > 0 && (<p className='errorMessage'>{errors.city}</p>)}
                     <input
                         id='cityInput'
                         type='string'
@@ -134,18 +169,25 @@ export default function Register() {
                         placeholder='City'
                         value={formData.city}
                         onChange={handleChange}
+                        className={errors.city.length > 0 ? 'errorInput' : null}
                     />
+                </div>
                 </label>
-                {errors.city.length > 0 ? (<p className='error'>{errors.city}</p>) : null}
-                <select>
-                    <option value='State'>State</option>
-                    <option value='Florida'>Florida</option>
-                    <option value='Massachusetts'>Massachusetts</option>
-                    <option value='Ohio'>Ohio</option>
-                    <option value='Washington'>Washington</option>
+
+                <select className='stateDropdown'>
+                    {states.map(state => {
+                        return(<option value={state.name}>{state.name}</option>)
+                    })}
                 </select>
-                {errors.state ==='state' ? (<p className='error'>{errors.state}</p>) : null}
+                
                 <label>
+                <div className='xDiv'>
+                    {errors.zip.length > 0 ? (<p 
+                                            className='error' 
+                                            onMouseEnter={() => setIsShown(true)}
+                                            onMouseLeave={() => setIsShown(false)}>
+                                            X</p>) : null}
+                    {isShown && errors.zip.length > 0 && (<p className='errorMessage'>{errors.zip}</p>)}
                     <input
                         id='zipInput'
                         type='string'
@@ -153,9 +195,11 @@ export default function Register() {
                         placeholder='Zip Code'
                         value={formData.zip}
                         onChange={handleChange}
+                        className={errors.zip.length > 0 ? 'errorInput' : null}
                     />
+                </div>
                 </label>
-                {errors.zip.length > 0 ? (<p className='error'>{errors.zip}</p>) : null}
+
                 <button disabled={buttonDisabled}>
                     Register
                 </button>

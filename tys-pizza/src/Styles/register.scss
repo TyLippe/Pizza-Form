@@ -26,8 +26,26 @@
             width: 15em;
             font-size: 16px;
         }
+        .xDiv {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .errorInput {
             background-color: $red;
+        }
+        .error {
+            cursor: default;
+        }
+        .errorMessage {
+            border: 1px black solid;
+            border-radius: 10px;
+            position: absolute;
+            padding: 0.5em 2em;
+            bottom: 2em;
+            color: $red;
+            background-color: $white;
         }
         select {
             padding: 0.3em;
