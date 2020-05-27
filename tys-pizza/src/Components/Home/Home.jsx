@@ -24,45 +24,43 @@ export default function Home() {
         })
     }
 
-
-    console.log(selected)
     return(
         <div className='homeDiv'>
             <div className='homeRadioDiv'>
                 <form className='foodForm' onChange={handleChange}>
-                    <div className='radioDiv'>
-                        <img src={Pizza} />
+                    <label className='radioDiv'>
+                        <img src={Pizza} className={selected.pizza ? 'active' : null} />
                         <input
                             type='radio'
                             value='pizza'
                             name='food'
                             defaultChecked='defaultChecked'
                         />
-                    </div>
-                    <div className='radioDiv'>
-                        <img src={Wings} />
+                    </label>
+                    <label className='radioDiv'>
+                        <img src={Wings} className={selected.wings ? 'active' : null} />
                         <input
                             type='radio'
                             value='wings'
                             name='food'
                         />
-                    </div>
-                    <div className='radioDiv'>
-                        <img src={Sides} />
+                    </label>
+                    <label className='radioDiv'>
+                        <img src={Sides} className={selected.sides ? 'active' : null} />
                         <input
                             type='radio'
                             value='sides'
                             name='food'
                         />
-                    </div>
-                    <div className='radioDiv'>
-                        <img src={Drinks} />
+                    </label>
+                    <label className='radioDiv'>
+                        <img src={Drinks} className={selected.drinks ? 'active' : null} />
                         <input
                             type='radio'
                             value='drinks'
                             name='food'
                         />
-                    </div>
+                    </label>
                 </form>
             </div>
             <div className='homeCartDiv'>
