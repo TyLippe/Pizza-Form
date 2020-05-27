@@ -1,9 +1,10 @@
 import React from 'react'
+import '../../Styles/cart.scss'
 
 export default function Cart() {
     return(
         <div className='cartDiv'>
-            CART
+            <h1>CART</h1>
         </div>
     )
 }

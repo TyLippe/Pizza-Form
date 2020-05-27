@@ -27,6 +27,8 @@
         }
     }
     .homeCartDiv {
+        position: sticky;
+        top: 0.5em;
         background-color: $lightTransparent;
         border-radius: 10px;
         color: black;
