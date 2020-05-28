@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Pepperoni",
+        "value": "pepperoni"
+    },
+    {
+        "name": "Bacon",
+        "value": "bacon"
+    },    
+    {
+        "name": "Salami",
+        "value": "salami"
+    },
+    {
+        "name": "Chicken",
+        "value": "chicken"
+    },    
+    {
+        "name": "Ham",
+        "value": "ham"
+    },    
+    {
+        "name": "Sausage",
+        "value": "sausage"
+    },    
+    {
+        "name": "Mushrooms",
+        "value": "mushroom"
+    },    
+    {
+        "name": "Onions",
+        "value": "onion"
+    },    
+    {
+        "name": "Green Peppers",
+        "value": "peppers"
+    },    
+    {
+        "name": "Pineapple",
+        "value": "pineapple"
+    },
+    {
+        "name": "Black Olives",
+        "value": "olives"
+    }    
+]

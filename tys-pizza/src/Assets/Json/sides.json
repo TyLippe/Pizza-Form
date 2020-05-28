@@ -1,0 +1,30 @@
+[
+    {
+        "name": "French Fries",
+        "value": "fries"
+    },
+    {
+        "name": "Chicken Tenders",
+        "value": "tenders"
+    },
+    {
+        "name": "Tater Tots",
+        "value": "tots"
+    },
+    {
+        "name": "Salad",
+        "value": "salad"
+    },
+    {
+        "name": "Breadsticks",
+        "value": "sticks"
+    },
+    {
+        "name": "Cheesy Bread",
+        "value": "bread"
+    },
+    {
+        "name": "Jalapeno Poppers",
+        "value": "poppers"
+    }
+]

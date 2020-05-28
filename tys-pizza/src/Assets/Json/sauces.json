@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Buffalo Medium",
+        "value": "medium"
+    },
+    {
+        "name": "Buffalo Hot",
+        "value": "hot"
+    },
+    {
+        "name": "Spicy Garlic",
+        "value": "garlic"
+    },
+    {
+        "name": "Korean BBQ",
+        "value": "korean"
+    },
+    {
+        "name": "Cajun",
+        "value": "cajun"
+    },
+    {
+        "name": "Naked",
+        "value": "naked"
+    }
+]

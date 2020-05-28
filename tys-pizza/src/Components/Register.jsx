@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
-import states from '../Assets/states.json'
+import states from '../Assets/Json/states.json'
 import * as yup from 'yup'
 import '../Styles/register.scss'
 

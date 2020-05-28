@@ -1,5 +1,5 @@
 import React from 'react'
-import toppings from '../../Assets/toppings.json'
+import toppings from '../../Assets/Json/toppings.json'
 
 export default function PizzaForm() {
     const handleChange = e => {
@@ -37,6 +37,7 @@ export default function PizzaForm() {
                                         id='toppingInput'
                                         type='checkbox'
                                         name={topping.name}
+                                        value={topping.value}
                                         // checked={pizza.toppings.pepperoni}
                                         onChange={handleChange}
                                         />

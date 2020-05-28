@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Pepsi",
+        "value": "pepsi"
+    },
+    {
+        "name": "Dr. Pepper",
+        "value": "pepper"
+    },
+    {
+        "name": "MTN Dew",
+        "value": "dew"
+    },
+    {
+        "name": "Fanta Orange",
+        "value": "fanta"
+    },
+    {
+        "name": "Root Beer",
+        "value": "root"
+
+    },
+    {
+        "name": "Sprite",
+        "value": "sprite"
+    }
+]
