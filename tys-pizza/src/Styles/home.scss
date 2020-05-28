@@ -5,43 +5,52 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 1em;
-    .homeRadioDiv {
+    .leftSideDiv {
         width: 69%;
-    }
-    form {
-        background-color: $darkTransparent;
-        border-radius: 10px;
-        padding: 1em;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;     
-        label {
-            cursor: pointer;
-        }
-        input { 
-            cursor: pointer;
-        }
-        img {
-            width: 14em;
-            margin: 0 0.3em;
-            height: auto;
-            &:hover {
+        .foodForm {
+            background-color: $darkTransparent;
+            border-radius: 10px;
+            padding: 1em;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;     
+            img {
+                width: 14em;
+                margin: 0 0.3em;
+                height: auto;
+                &:hover {
+                    -webkit-filter: drop-shadow(5px 5px 5px $red);
+                    filter: drop-shadow(5px 5px 5px $red); 
+                }
+            }
+            .radioDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                input { 
+                    cursor: pointer;
+                }
+            }
+            .active {
                 -webkit-filter: drop-shadow(5px 5px 5px $red);
                 filter: drop-shadow(5px 5px 5px $red); 
             }
         }
-        .active {
-            -webkit-filter: drop-shadow(5px 5px 5px $red);
-            filter: drop-shadow(5px 5px 5px $red); 
-        }
-        .radioDiv {
+        .orderDiv {
+            background-color: $darkTransparent;
+            border-radius: 10px;
+            margin-top: 1em;
+            padding: 1em;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
+            h2 {
+                font-size: 36px;
+            }
         }
     }
-    .homeCartDiv {
+    .rightSideDiv {
         position: sticky;
         top: 0.5em;
         background-color: $lightTransparent;

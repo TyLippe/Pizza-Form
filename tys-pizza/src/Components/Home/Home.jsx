@@ -4,6 +4,10 @@ import Pizza from '../../Assets/pizza.png'
 import Wings from '../../Assets/wings.png'
 import Sides from '../../Assets/fries.png'
 import Drinks from '../../Assets/drinks.png'
+import PizzaForm from './Pizza'
+import WingForm from './Wings'
+import SideForm from './Sides'
+import DrinkForm from './Drinks'
 import '../../Styles/home.scss'
 
 export default function Home() {
@@ -26,7 +30,7 @@ export default function Home() {
 
     return(
         <div className='homeDiv'>
-            <div className='homeRadioDiv'>
+            <div className='leftSideDiv'>
                 <form className='foodForm' onChange={handleChange}>
                     <label className='radioDiv'>
                         <img src={Pizza} className={selected.pizza ? 'active' : null} />
@@ -62,8 +66,14 @@ export default function Home() {
                         />
                     </label>
                 </form>
+                <div className='orderDiv'>
+                    {selected.pizza && (<PizzaForm />)}
+                    {selected.wings && (<WingForm />)}
+                    {selected.sides && (<SideForm />)}
+                    {selected.drinks && (<DrinkForm />)}
+                </div>
             </div>
-            <div className='homeCartDiv'>
+            <div className='rightSideDiv'>
                 <Cart />
             </div>
         </div>
