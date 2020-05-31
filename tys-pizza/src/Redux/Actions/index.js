@@ -20,8 +20,13 @@ export const FAILED_ORDER = 'FAILED_ORDER'
 
 // Edit Order
 export const ADD_TO_ORDER = 'ADD_TO_ORDER'
+export const SUCCESS_ADD = 'SUCCESS_ADD'
 export const FAILED_TO_ADD = 'FAILED_TO_ADD'
+
+// Delete From Order
 export const DELETE_FROM_ORDER = 'DELETE_FROM_ORDER'
+export const SUCCESS_DELETE = 'SUCCESS_DELETE'
+export const FAILED_DELETE = 'FAILED_DELETE'
 
 export function login(creds) {
     return dispatch => {
@@ -35,3 +40,52 @@ export function login(creds) {
                 .catch(err => dispatch({type: FAILED_USER, payload: err}))
     }
 }
+
+
+export function register(userData) {
+    return dispatch => {
+        dispatch({type: CREATE_USER})
+            axios 
+                .post(baseURL + '/register', userData)
+                .then(res => {
+                    dispatch({type: SUCCESS_USER})
+                })
+                .catch(err => dispatch({type: FAILED_CREATE, payload: err}))
+    }
+}
+
+export function getOrder(userId) {
+    return dispatch => {
+        dispatch({type: FETCH_ORDER})
+            axiosWithAuth()
+                .get(baseURL + `${userId}/order`)
+                .then(res => {
+                    dispatch({type: SUCCESS_ORDER, payload: res.data})
+                })
+                .catch(err => dispatch({type: FAILED_ORDER, payload: err}))
+    }
+}
+
+export function addToOrder(userId, order) {
+    return dispatch => {
+        dispatch({type: ADD_TO_ORDER})
+            axiosWithAuth()
+                .post(baseURL + `/order${userId}/food`, order)
+                .then(res => {
+                    dispatch({type: SUCCESS_ADD, payload: res.data})
+                })
+                .catch(err => dispatch({type: FAILED_TO_ADD, payload: err}))
+    }
+}
+
+export function deleteFromOrder(foodId) {
+    return dispatch => {
+        dispatch({type: DELETE_FROM_ORDER})
+            axiosWithAuth()
+            .delete(baseURL + `/order${foodId}`)
+            .then(res => {
+                dispatch({type: SUCCESS_DELETE, payload: res.data})
+            })
+            .catch(err => dispatch({type: FAILED_DELETE, payload: err}))
+    }
+} 
