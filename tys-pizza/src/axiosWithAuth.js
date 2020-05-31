@@ -6,6 +6,6 @@ export function axiosWithAuth() {
             headers: {
                 Authorization: token
             },
-            baseURL: `https://tys-pizza.herokuapp.com/`
+            baseURL: `https://tys-pizza.herokuapp.com/api`
         })
 }
