@@ -78,9 +78,7 @@ function WingForm(props) {
 }
 
 const mapStateToProps = state => {
-    return {
-        wings: state.wings
-    }
+    return {}
 }
 
 export default connect(

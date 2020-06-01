@@ -26,7 +26,7 @@ function Cart(props) {
                             <li>{item.crust} Crust</li>
                             <li>{item.sauce} Sauce</li>
                             <li>{item.cheese} Cheese</li>
-                            <li>w/ {item.toppings}</li>
+                            {item.toppings.length > 2 ? (<li>w/ {item.toppings}</li>) : <li>No Toppings</li>}
                             <button onClick={() => removeFromCart(item.id)}>Delete</button>
                         </div>
                     )
