@@ -7,15 +7,14 @@ function WingForm(props) {
     const userId = localStorage.userId
 
     const [wings, setWings] = useState({
-        item_type: 'wings',
-        type: 'bone-in',
+        item_type: 'Wings',
+        type: 'Bone-in',
         amount: '16',
-        sauce: 'naked'
+        sauce: 'Naked'
     })
 
     const handleChange = e => {
         e.persist()
-        console.log(e.target.name, e.target.value)
         setWings({
             ...wings,
             [e.target.name]: e.target.value
@@ -33,8 +32,8 @@ function WingForm(props) {
             <form className='wingForm' onSubmit={handleSubmit}>
                 <p>Type</p>
                 <select onChange={handleChange} name='type'>
-                    <option value='bone-in'>Bone-In</option>
-                    <option value='boneless'>Boneless</option>
+                    <option value='Bone-in'>Bone-In</option>
+                    <option value='Boneless'>Boneless</option>
                 </select>
                 <p>Amount</p>
                 <select onChange={handleChange} name='amount' defaultValue='16'>
@@ -48,7 +47,7 @@ function WingForm(props) {
                         id='toppingInput'
                         type='radio'
                         name='sauce'
-                        value='naked'
+                        value='Naked'
                         defaultChecked='defaultChecked'
                         onChange={handleChange}
                     />
@@ -62,7 +61,7 @@ function WingForm(props) {
                                         id='toppingInput'
                                         type='radio'
                                         name='sauce'
-                                        value={sauce.value}
+                                        value={sauce.name}
                                         onChange={handleChange}
                                         />
                                     {sauce.name}

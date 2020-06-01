@@ -1,27 +1,21 @@
 [
     {
-        "name": "Pepsi",
-        "value": "pepsi"
+        "name": "Pepsi"
     },
     {
-        "name": "Dr. Pepper",
-        "value": "pepper"
+        "name": "Dr. Pepper"
     },
     {
-        "name": "MTN Dew",
-        "value": "dew"
+        "name": "MTN Dew"
     },
     {
-        "name": "Fanta Orange",
-        "value": "fanta"
+        "name": "Fanta Orange"
     },
     {
-        "name": "Root Beer",
-        "value": "root"
+        "name": "Root Beer"
 
     },
     {
-        "name": "Sprite",
-        "value": "sprite"
+        "name": "Sprite"
     }
 ]

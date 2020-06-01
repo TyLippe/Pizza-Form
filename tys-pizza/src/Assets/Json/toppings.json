@@ -1,46 +1,35 @@
 [
     {
-        "name": "Pepperoni",
-        "value": "pepperoni"
+        "name": "Pepperoni"
     },
     {
-        "name": "Bacon",
-        "value": "bacon"
+        "name": "Bacon"
     },    
     {
-        "name": "Salami",
-        "value": "salami"
+        "name": "Salami"
     },
     {
-        "name": "Chicken",
-        "value": "chicken"
+        "name": "Chicken"
     },    
     {
-        "name": "Ham",
-        "value": "ham"
+        "name": "Ham"
     },    
     {
-        "name": "Sausage",
-        "value": "sausage"
+        "name": "Sausage"
     },    
     {
-        "name": "Mushrooms",
-        "value": "mushroom"
+        "name": "Mushrooms"
     },    
     {
-        "name": "Onions",
-        "value": "onion"
+        "name": "Onions"
     },    
     {
-        "name": "Green Peppers",
-        "value": "peppers"
+        "name": "Green Peppers"
     },    
     {
-        "name": "Pineapple",
-        "value": "pineapple"
+        "name": "Pineapple"
     },
     {
-        "name": "Black Olives",
-        "value": "olives"
+        "name": "Black Olives"
     }    
 ]

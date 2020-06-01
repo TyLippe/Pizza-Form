@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {getOrder, deleteFromOrder} from '../../Redux/Actions'
 import '../../Styles/cart.scss'
@@ -19,12 +19,45 @@ function Cart(props) {
         <div className='cartDiv'>
             <h1>User's CART</h1>
             {order && order.map(item => {
-                return(
-                    <div>
-                        <p>{item.item_type}</p>
-                        <button onClick={() => removeFromCart(item.id)}>Delete</button>
-                    </div>
-                )
+                if(item.item_type == 'Pizza') {
+                    return(
+                        <div>
+                            <p>{item.item_type}</p>
+                            <li>{item.crust} Crust</li>
+                            <li>{item.sauce} Sauce</li>
+                            <li>{item.cheese} Cheese</li>
+                            <li>w/ {item.toppings}</li>
+                            <button onClick={() => removeFromCart(item.id)}>Delete</button>
+                        </div>
+                    )
+                } else if(item.item_type == 'Wings') {
+                    return(
+                        <div>
+                            <p>{item.item_type}</p>
+                            <li>{item.type}</li>
+                            <li>{item.amount}</li>
+                            <li>{item.sauce}</li>
+                            <button onClick={() => removeFromCart(item.id)}>Delete</button>
+                        </div>
+                    )
+                } else if(item.item_type == 'Side') {
+                    return(
+                        <div>
+                            <p>{item.item_type}</p>
+                            <li>{item.type}</li>
+                            <button onClick={() => removeFromCart(item.id)}>Delete</button>
+                        </div>
+                    )
+                } else {
+                    return(
+                        <div>
+                            <p>{item.item_type}</p>
+                            <p>{item.size}</p>
+                            <p>{item.type}</p>
+                            <button onClick={() => removeFromCart(item.id)}>Delete</button>
+                        </div>
+                    )
+                }
             })}
         </div>
     )
