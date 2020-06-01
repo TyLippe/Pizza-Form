@@ -1,7 +1,11 @@
 import React, {useState} from 'react'
+import {connect} from 'react-redux'
+import {addToOrder} from '../../Redux/Actions'
 import sauces from '../../Assets/Json/sauces.json'
 
-export default function WingForm() {
+function WingForm(props) {
+    const userId = localStorage.userId
+
     const [wings, setWings] = useState({
         item_type: 'wings',
         type: 'bone-in',
@@ -18,12 +22,15 @@ export default function WingForm() {
         })
     }
 
-    console.log(wings)
+    const handleSubmit = e => {
+        e.preventDefault()
+        props.addToOrder(userId, wings)
+    }
 
     return(
         <div className='wingDiv'>
             <h2>Wings</h2>
-            <form className='wingForm'>
+            <form className='wingForm' onSubmit={handleSubmit}>
                 <p>Type</p>
                 <select onChange={handleChange} name='type'>
                     <option value='bone-in'>Bone-In</option>
@@ -40,7 +47,7 @@ export default function WingForm() {
                     <input  
                         id='toppingInput'
                         type='radio'
-                        name='sauces'
+                        name='sauce'
                         value='naked'
                         defaultChecked='defaultChecked'
                         onChange={handleChange}
@@ -54,7 +61,7 @@ export default function WingForm() {
                                     <input
                                         id='toppingInput'
                                         type='radio'
-                                        name='sauces'
+                                        name='sauce'
                                         value={sauce.value}
                                         onChange={handleChange}
                                         />
@@ -63,7 +70,21 @@ export default function WingForm() {
                         </div>
                         )
                     })}
+                <button>
+                    Add To Cart
+                </button>
             </form>
         </div>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        wings: state.wings
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    {addToOrder}
+)(WingForm)

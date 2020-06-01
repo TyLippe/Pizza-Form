@@ -15,6 +15,7 @@ const initialState = {
     fetchingOrder: false,
     addingOrder: false,
     deletingOrder: false,
+    update: false,
     err: null
 }
 
@@ -23,10 +24,10 @@ export function orderReducer(state = initialState, action) {
         case FETCH_ORDER:
             return{
                 ...state,
-                orderData: [],
                 fetchingOrder: true,
                 addingOrder: false,
                 deletingOrder: false,
+                update: false,
                 err: null
             }
         case SUCCESS_ORDER:
@@ -50,7 +51,6 @@ export function orderReducer(state = initialState, action) {
         case ADD_TO_ORDER:
             return{
                 ...state,
-                orderData: [],
                 fetchingOrder: false,
                 addingOrder: true,
                 deletingOrder: false,
@@ -59,16 +59,16 @@ export function orderReducer(state = initialState, action) {
         case SUCCESS_ADD:
             return{
                 ...state,
-                orderData: [action.payload],
+                orderData: [...state.orderData, action.payload],
                 fetchingOrder: false,
                 addingOrder: false,
                 deletingOrder: false,
+                update: true,
                 err: null
             }
         case FAILED_TO_ADD:
             return{
                 ...state,
-                orderData: [],
                 fetchingOrder: false,
                 addingOrder: false,
                 deletingOrder: false,
@@ -77,7 +77,6 @@ export function orderReducer(state = initialState, action) {
         case DELETE_FROM_ORDER:
             return{
                 ...state,
-                orderData: [],
                 fetchingOrder: false,
                 addingOrder: false,
                 deletingOrder: true,
@@ -86,10 +85,10 @@ export function orderReducer(state = initialState, action) {
         case SUCCESS_DELETE:
             return{
                 ...state,
-                orderData: [action.payload],
                 fetchingOrder: false,
                 addingOrder: false,
                 deletingOrder: false,
+                update: true,
                 err: null
             }
         case FAILED_DELETE:

@@ -35,6 +35,7 @@ export function login(creds) {
                 .post(baseURL + '/login', creds)
                 .then(res => {
                     localStorage.setItem('token', res.data.token)
+                    localStorage.setItem('userId', res.data.id)
                     dispatch({type: SUCCESS_USER})
                 })
                 .catch(err => dispatch({type: FAILED_USER, payload: err}))
@@ -58,7 +59,7 @@ export function getOrder(userId) {
     return dispatch => {
         dispatch({type: FETCH_ORDER})
             axiosWithAuth()
-                .get(baseURL + `${userId}/order`)
+                .get(baseURL + `/${userId}/order`)
                 .then(res => {
                     dispatch({type: SUCCESS_ORDER, payload: res.data})
                 })
@@ -70,7 +71,7 @@ export function addToOrder(userId, order) {
     return dispatch => {
         dispatch({type: ADD_TO_ORDER})
             axiosWithAuth()
-                .post(baseURL + `/order${userId}/food`, order)
+                .post(baseURL + `/order/${userId}/food`, order)
                 .then(res => {
                     dispatch({type: SUCCESS_ADD, payload: res.data})
                 })
@@ -82,8 +83,9 @@ export function deleteFromOrder(foodId) {
     return dispatch => {
         dispatch({type: DELETE_FROM_ORDER})
             axiosWithAuth()
-            .delete(baseURL + `/order${foodId}`)
+            .delete(baseURL + `/order/${foodId}`)
             .then(res => {
+                console.log(res.data)
                 dispatch({type: SUCCESS_DELETE, payload: res.data})
             })
             .catch(err => dispatch({type: FAILED_DELETE, payload: err}))
