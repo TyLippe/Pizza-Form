@@ -6,14 +6,17 @@ export default function NavBar() {
     let history = useHistory()
     let location = useLocation()
 
-    function handleClick(destination) {
+    const handleClick = (destination) => {
         if(destination === 'register'){
             history.push('/register')
-        } else if(destination === 'signOut'){
-            history.push('/')
         } else {
             history.push('/')
         }
+    }
+
+    const signOut = () => {
+        localStorage.clear()
+        history.push('/')
     }
 
     return(
@@ -24,7 +27,7 @@ export default function NavBar() {
             {location.pathname === '/register' 
                 && <button onClick={() => handleClick()}>Log In</button>}
             {location.pathname === '/home' 
-                && <button onClick={() => handleClick('signOut')}>Sign Out</button>}
+                && <button onClick={signOut}>Sign Out</button>}
         </div>
     )
 }

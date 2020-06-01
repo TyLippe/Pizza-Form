@@ -42,7 +42,6 @@ export function login(creds) {
     }
 }
 
-
 export function register(userData) {
     return dispatch => {
         dispatch({type: CREATE_USER})

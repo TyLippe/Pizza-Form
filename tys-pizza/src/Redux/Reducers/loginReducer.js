@@ -31,7 +31,7 @@ export function loginReducer(state = initialState, action) {
                 ...state,
                 fetchingUser: false,
                 isLoggedIn: false,
-                err: 'User not found'
+                err: 'User not found or Incorrect Credentials'
             }
         default:
             return state

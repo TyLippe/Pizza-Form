@@ -52,6 +52,7 @@ function Login(props) {
         e.preventDefault()
         props.login(formData)
     }
+    
 
     if(props.isLoggedIn){
         setTimeout(() => history.push('/home'), 2000)
@@ -130,7 +131,8 @@ function Login(props) {
 const mapStateToProps = state => {
     return {
         formData: state.formData,
-        isLoggedIn: state.login.isLoggedIn
+        isLoggedIn: state.login.isLoggedIn,
+        err: state.login.err
     }
 }
 
