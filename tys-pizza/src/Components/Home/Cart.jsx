@@ -34,9 +34,8 @@ function Cart(props) {
                     return(
                         <div>
                             <p>{item.item_type}</p>
-                            <li>{item.type}</li>
-                            <li>{item.amount}</li>
-                            <li>{item.sauce}</li>
+                            <li>{item.amount} {item.type}</li>
+                            <li>w/ {item.sauce} Sauce</li>
                             <button onClick={() => removeFromCart(item.id)}>Delete</button>
                         </div>
                     )
@@ -52,8 +51,7 @@ function Cart(props) {
                     return(
                         <div>
                             <p>{item.item_type}</p>
-                            <p>{item.size}</p>
-                            <p>{item.type}</p>
+                            <li>{item.size} of {item.type}</li>
                             <button onClick={() => removeFromCart(item.id)}>Delete</button>
                         </div>
                     )
