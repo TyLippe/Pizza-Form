@@ -101,5 +101,7 @@ export function orderReducer(state = initialState, action) {
                 deletingOrder: false,
                 err: 'Unable to delete from order'
             }
+        default:
+            return state
     }
 }

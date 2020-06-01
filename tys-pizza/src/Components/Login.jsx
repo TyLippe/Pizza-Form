@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {login} from '../Redux/Actions'
 import * as yup from 'yup'
 import '../Styles/login.scss'
 
@@ -13,7 +15,7 @@ const formSchema = yup.object().shape({
         .required('Please enter your password')
 })
 
-export default function Login() {
+function Login(props) {
     let history = useHistory()
 
     const [formData, setFormData] = useState({
@@ -25,8 +27,6 @@ export default function Login() {
         email: '',
         password: ''
     })
-
-    const [user, setUser] = useState([])
     
     const [buttonDisabled, setButtonDisabled] = useState(true)
 
@@ -50,8 +50,11 @@ export default function Login() {
 
     const handleSubmit = e => {
         e.preventDefault()
-        setUser(formData)
-        history.push('/home')
+        props.login(formData)
+    }
+
+    if(props.isLoggedIn){
+        setTimeout(() => history.push('/home'), 2000)
     }
 
     const validateForm = e => {
@@ -71,7 +74,7 @@ export default function Login() {
                 })
             })
     }
-console.log(user)
+
     return(
         <div className='loginDiv'>
             <h2>Welcome Back</h2>
@@ -123,3 +126,15 @@ console.log(user)
         </div>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        formData: state.formData,
+        isLoggedIn: state.login.isLoggedIn
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    {login}
+)(Login)

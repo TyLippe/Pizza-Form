@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {register} from '../Redux/Actions'
 import states from '../Assets/Json/states.json'
 import * as yup from 'yup'
 import '../Styles/register.scss'
@@ -28,7 +30,7 @@ const formSchema = yup.object().shape({
         .required('Please enter your Zip Code')
 })
 
-export default function Register() {
+function Register(props) {
     let history = useHistory()
 
     const [formData, setFormData] = useState({
@@ -48,8 +50,6 @@ export default function Register() {
         state: '',
         zip: ''
     })
-
-    const [user, setUser] = useState([])
     
     const [buttonDisabled, setButtonDisabled] = useState(true)
 
@@ -73,8 +73,11 @@ export default function Register() {
 
     const handleSubmit = e => {
         e.preventDefault()
-        setUser(formData)
-        history.push('/')
+        props.register(formData)
+    }
+
+    if(props.created){
+        setTimeout(() => history.push('/'), 2000)
     }
 
     const validateForm = e => {
@@ -212,3 +215,15 @@ export default function Register() {
         </div>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        formData: state.formData,
+        created: state.register.created
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    {register}
+)(Register)

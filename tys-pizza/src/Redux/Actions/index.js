@@ -48,7 +48,7 @@ export function register(userData) {
             axios 
                 .post(baseURL + '/register', userData)
                 .then(res => {
-                    dispatch({type: SUCCESS_USER})
+                    dispatch({type: SUCCESS_CREATE})
                 })
                 .catch(err => dispatch({type: FAILED_CREATE, payload: err}))
     }
