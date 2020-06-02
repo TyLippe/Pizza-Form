@@ -1,78 +1,323 @@
 @import 'variables.scss';
 
-.loginDiv {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    border: 1px white solid;
-    background-color: $darkTransparent;
-    border-radius: 10px;
-    align-items: center;
-    height: 25em;
-    margin: 7% 40%;
-    h2 {
-        font-family: $font;
-        font-size: 42px;
-        text-shadow: 2px 2px $red;
-    }
-    form {
+//X-Large Screen
+@media screen and (max-width: $break-xlarge) {
+    .loginDiv {
+        position: relative;
         display: flex;
         flex-direction: column;
+        border: 1px white solid;
+        background-color: $darkTransparent;
+        border-radius: 10px;
         align-items: center;
-        input {
-            padding: 0.3em;
-            margin: 0.6em;
-            width: 15em;
-            font-size: 16px;
-        }
-        .xDiv {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .errorInput {
-            background-color: $red;
-        }
-        .error {
-            cursor: default;
-        }
-        .errorMessage {
-            border: 1px black solid;
-            border-radius: 10px;
-            position: absolute;
-            padding: 0.5em 2em;
-            bottom: 2em;
-            color: $red;
-            background-color: $white;
-        }
-        button {
-            position: absolute;
-            bottom: 0.5em;
-            background-color: rgba(0,0,0,0);
-            padding: 0.5em 3em;
-            border: 1px solid $white;
-            border-radius: 10px;
-            margin: 0 0.3em 0.3em 0;
-            text-decoration: none;
+        height: 25em;
+        width: 25em;
+        margin: 5% auto;
+        h2 {
             font-family: $font;
-            font-size: 16px;
-            text-align: center;
+            font-size: 42px;
+            text-shadow: 2px 2px $red;
         }
-        .diabled {
-            cursor: default;
-        }
-        .active {
-            cursor: pointer;
-            color: $white;
-            &:hover {
-                box-shadow: 2px 2px $red;
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input {
+                padding: 0.3em;
+                margin: 0.6em;
+                width: 15em;
+                font-size: 16px;
+            }
+            .xDiv {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .errorInput {
+                background-color: $red;
+            }
+            .error {
+                cursor: default;
+            }
+            .errorMessage {
+                border: 1px black solid;
+                border-radius: 10px;
+                position: absolute;
+                padding: 0.5em 2em;
+                bottom: 2em;
+                color: $red;
+                background-color: $white;
+            }
+            button {
+                position: absolute;
+                bottom: 0.5em;
+                background-color: rgba(0,0,0,0);
+                padding: 0.5em 3em;
+                border: 1px solid $white;
+                border-radius: 10px;
+                margin: 0 0.3em 0.3em 0;
+                text-decoration: none;
+                font-family: $font;
+                font-size: 16px;
+                text-align: center;
+            }
+            .diabled {
+                cursor: default;
+            }
+            .active {
+                cursor: pointer;
+                color: $white;
+                &:hover {
+                    box-shadow: 2px 2px $red;
+                }
+            }
+            p {
+                padding: 0;
+                margin: 0;
+                color: $red;
             }
         }
-        p {
-            padding: 0;
-            margin: 0;
-            color: $red;
+    }
+}
+
+//Large Screen
+@media screen and (max-width: $break-large) {
+    .loginDiv {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border: 1px white solid;
+        background-color: $darkTransparent;
+        border-radius: 10px;
+        align-items: center;
+        height: 25em;
+        width: 25em;
+        margin: 5% auto;
+        h2 {
+            font-family: $font;
+            font-size: 42px;
+            text-shadow: 2px 2px $red;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input {
+                padding: 0.3em;
+                margin: 0.6em;
+                width: 15em;
+                font-size: 16px;
+            }
+            .xDiv {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .errorInput {
+                background-color: $red;
+            }
+            .error {
+                cursor: default;
+            }
+            .errorMessage {
+                border: 1px black solid;
+                border-radius: 10px;
+                position: absolute;
+                padding: 0.5em 2em;
+                bottom: 2em;
+                color: $red;
+                background-color: $white;
+            }
+            button {
+                position: absolute;
+                bottom: 0.5em;
+                background-color: rgba(0,0,0,0);
+                padding: 0.5em 3em;
+                border: 1px solid $white;
+                border-radius: 10px;
+                margin: 0 0.3em 0.3em 0;
+                text-decoration: none;
+                font-family: $font;
+                font-size: 16px;
+                text-align: center;
+            }
+            .diabled {
+                cursor: default;
+            }
+            .active {
+                cursor: pointer;
+                color: $white;
+                &:hover {
+                    box-shadow: 2px 2px $red;
+                }
+            }
+            p {
+                padding: 0;
+                margin: 0;
+                color: $red;
+            }
+        }
+    }
+}
+
+//Medium Screen
+@media screen and (max-width: $break-med) {
+    .loginDiv {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border: 1px white solid;
+        background-color: $darkTransparent;
+        border-radius: 10px;
+        align-items: center;
+        height: 25em;
+        margin: 5% auto;
+        h2 {
+            font-family: $font;
+            font-size: 42px;
+            text-shadow: 2px 2px $red;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input {
+                padding: 0.3em;
+                margin: 0.6em;
+                width: 15em;
+                font-size: 16px;
+            }
+            .xDiv {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .errorInput {
+                background-color: $red;
+            }
+            .error {
+                cursor: default;
+            }
+            .errorMessage {
+                border: 1px black solid;
+                border-radius: 10px;
+                position: absolute;
+                padding: 0.5em 2em;
+                bottom: 2em;
+                color: $red;
+                background-color: $white;
+            }
+            button {
+                position: absolute;
+                bottom: 0.5em;
+                background-color: rgba(0,0,0,0);
+                padding: 0.5em 3em;
+                border: 1px solid $white;
+                border-radius: 10px;
+                margin: 0 0.3em 0.3em 0;
+                text-decoration: none;
+                font-family: $font;
+                font-size: 16px;
+                text-align: center;
+            }
+            .diabled {
+                cursor: default;
+            }
+            .active {
+                cursor: pointer;
+                color: $white;
+                &:hover {
+                    box-shadow: 2px 2px $red;
+                }
+            }
+            p {
+                padding: 0;
+                margin: 0;
+                color: $red;
+            }
+        }
+    }
+}
+
+//Small Screen
+@media screen and (max-width: $break-small) {
+    .loginDiv {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border: none;
+        background-color: $darkTransparent;
+        border-radius: 10px;
+        align-items: center;
+        height: 25em;
+        margin: 5% auto;
+        h2 {
+            font-family: $font;
+            font-size: 42px;
+            text-shadow: 2px 2px $red;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input {
+                padding: 0.3em;
+                margin: 0.6em;
+                width: 15em;
+                font-size: 16px;
+            }
+            .xDiv {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .errorInput {
+                background-color: $red;
+            }
+            .error {
+                cursor: default;
+            }
+            .errorMessage {
+                border: 1px black solid;
+                border-radius: 10px;
+                position: absolute;
+                padding: 0.5em 2em;
+                bottom: 2em;
+                color: $red;
+                background-color: $white;
+            }
+            button {
+                position: absolute;
+                bottom: 0.5em;
+                background-color: rgba(0,0,0,0);
+                padding: 0.5em 3em;
+                border: 1px solid $white;
+                border-radius: 10px;
+                margin: 0 0.3em 0.3em 0;
+                text-decoration: none;
+                font-family: $font;
+                font-size: 16px;
+                text-align: center;
+            }
+            .diabled {
+                cursor: default;
+            }
+            .active {
+                cursor: pointer;
+                color: $white;
+                &:hover {
+                    box-shadow: 2px 2px $red;
+                }
+            }
+            p {
+                padding: 0;
+                margin: 0;
+                color: $red;
+            }
         }
     }
 }
