@@ -1,62 +1,262 @@
 @import 'variables.scss';
 
-.homeDiv {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 1em;
-    .leftSideDiv {
-        width: 69%;
-        .foodForm {
-            background-color: $darkTransparent;
-            border-radius: 10px;
-            padding: 1em;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;     
-            img {
-                width: 14em;
-                margin: 0 0.3em;
-                height: auto;
-                &:hover {
+//X-Large Screen
+@media screen and (max-width: $break-xlarge) {
+    .homeDiv {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 1em;
+        .leftSideDiv {
+            width: 69%;
+            .foodForm {
+                background-color: $darkTransparent;
+                border-radius: 10px;
+                padding: 1em;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;     
+                img {
+                    width: 80%;
+                    margin: 0 0.3em;
+                    height: auto;
+                    &:hover {
+                        -webkit-filter: drop-shadow(5px 5px 5px $red);
+                        filter: drop-shadow(5px 5px 5px $red); 
+                    }
+                }
+                .radioDiv {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    cursor: pointer;
+                    input { 
+                        cursor: pointer;
+                    }
+                }
+                .active {
                     -webkit-filter: drop-shadow(5px 5px 5px $red);
                     filter: drop-shadow(5px 5px 5px $red); 
                 }
             }
-            .radioDiv {
+            .orderDiv {
+                background-color: $darkTransparent;
+                border-radius: 10px;
+                margin-top: 1em;
+                padding: 1em;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                justify-content: space-between;
-                cursor: pointer;
-                input { 
-                    cursor: pointer;
+                h2 {
+                    font-size: 36px;
                 }
             }
-            .active {
-                -webkit-filter: drop-shadow(5px 5px 5px $red);
-                filter: drop-shadow(5px 5px 5px $red); 
-            }
         }
-        .orderDiv {
-            background-color: $darkTransparent;
+        .rightSideDiv {
+            position: sticky;
+            top: 0.5em;
+            background-color: $lightTransparent;
             border-radius: 10px;
-            margin-top: 1em;
-            padding: 1em;
-            display: flex;
-            flex-direction: column;
-            h2 {
-                font-size: 36px;
-            }
+            color: black;
+            width: 30%;
+            height: 65vh;
         }
     }
-    .rightSideDiv {
-        position: sticky;
-        top: 0.5em;
-        background-color: $lightTransparent;
-        border-radius: 10px;
-        color: black;
-        width: 30%;
-        height: 65vh;
+}
+
+//Large Screen
+@media screen and (max-width: $break-large) {
+    .homeDiv {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 1em;
+        .leftSideDiv {
+            width: 69%;
+            .foodForm {
+                background-color: $darkTransparent;
+                border-radius: 10px;
+                padding: 1em;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;     
+                img {
+                    width: 80%;
+                    margin: 0 0.3em;
+                    height: auto;
+                    &:hover {
+                        -webkit-filter: drop-shadow(5px 5px 5px $red);
+                        filter: drop-shadow(5px 5px 5px $red); 
+                    }
+                }
+                .radioDiv {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    cursor: pointer;
+                    input { 
+                        cursor: pointer;
+                    }
+                }
+                .active {
+                    -webkit-filter: drop-shadow(5px 5px 5px $red);
+                    filter: drop-shadow(5px 5px 5px $red); 
+                }
+            }
+            .orderDiv {
+                background-color: $darkTransparent;
+                border-radius: 10px;
+                margin-top: 1em;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;
+                h2 {
+                    font-size: 36px;
+                }
+            }
+        }
+        .rightSideDiv {
+            position: sticky;
+            top: 0.5em;
+            background-color: $lightTransparent;
+            border-radius: 10px;
+            color: black;
+            width: 30%;
+            height: 65vh;
+        }
+    }
+}
+
+//Medium Screen
+@media screen and (max-width: $break-med) {
+    .homeDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 1em;
+        .leftSideDiv {
+            width: 100%;
+            .foodForm {
+                background-color: $darkTransparent;
+                border-radius: 10px;
+                padding: 1em;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;     
+                img {
+                    width: 60%;
+                    margin: 0;
+                    height: auto;
+                    &:hover {
+                        -webkit-filter: drop-shadow(5px 5px 5px $red);
+                        filter: drop-shadow(5px 5px 5px $red); 
+                    }
+                }
+                .radioDiv {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    cursor: pointer;
+                    input { 
+                        cursor: pointer;
+                    }
+                }
+                .active {
+                    -webkit-filter: drop-shadow(5px 5px 5px $red);
+                    filter: drop-shadow(5px 5px 5px $red); 
+                }
+            }
+            .orderDiv {
+                background-color: $darkTransparent;
+                border-radius: 10px;
+                margin-top: 1em;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;
+                h2 {
+                    font-size: 36px;
+                }
+            }
+        }
+        .rightSideDiv {
+            position: sticky;
+            margin-top: 1em;
+            top: 0.5em;
+            background-color: $lightTransparent;
+            border-radius: 10px;
+            color: black;
+            width: 100%;
+            height: 65vh;
+        }
+    }
+}
+
+//Small Screen
+@media screen and (max-width: $break-small) {
+    .homeDiv {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 1em;
+        .leftSideDiv {
+            width: 100%;
+            .foodForm {
+                background-color: $darkTransparent;
+                border-radius: 10px;
+                padding: 1em;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;     
+                img {
+                    width: 14em;
+                    margin: 0 0.3em;
+                    height: auto;
+                    &:hover {
+                        -webkit-filter: drop-shadow(5px 5px 5px $red);
+                        filter: drop-shadow(5px 5px 5px $red); 
+                    }
+                }
+                .radioDiv {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    cursor: pointer;
+                    input { 
+                        cursor: pointer;
+                    }
+                }
+                .active {
+                    -webkit-filter: drop-shadow(5px 5px 5px $red);
+                    filter: drop-shadow(5px 5px 5px $red); 
+                }
+            }
+            .orderDiv {
+                background-color: $darkTransparent;
+                border-radius: 10px;
+                margin-top: 1em;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;
+                h2 {
+                    font-size: 36px;
+                }
+            }
+        }
+        .rightSideDiv {
+            position: sticky;
+            top: 0.5em;
+            background-color: $lightTransparent;
+            border-radius: 10px;
+            color: black;
+            width: 100%;
+            height: 65vh;
+            padding-left: 0.3em;
+        }
     }
 }
