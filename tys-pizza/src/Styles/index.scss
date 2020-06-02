@@ -5,3 +5,10 @@ body {
     color: white;
     padding: 1.2em;
 }
+
+//Small Screen
+@media screen and (max-width: $break-small) {
+body {
+    padding: 0;
+}
+}

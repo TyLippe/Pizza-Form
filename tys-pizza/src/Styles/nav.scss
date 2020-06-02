@@ -1,33 +1,143 @@
 @import 'variables.scss';
 
-.navBar {
-    background-color: $darkTransparent;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2em;
-    h1 {
-        font-family: $font;
-        font-size: 84px;
-        color: $white;
-        text-shadow: 2px 2px $red;
-        margin: 0;
-    }
-    button {
-        cursor: pointer;
-        background-color: rgba(0,0,0,0);
-        padding: 0.5em 3em;
-        border: 1px solid $white;
+//X-Large Screen
+@media screen and (max-width: $break-xlarge) {
+    .navBar {
+        background-color: $darkTransparent;
         border-radius: 10px;
-        margin: 0 0.3em 0.3em 0;
-        text-decoration: none;
-        font-family: $font;
-        font-size: 18px;
-        color: $white;
-        text-align: center;
-        &:hover {
-            box-shadow: 2px 2px $red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2em;
+        h1 {
+            font-family: $font;
+            font-size: 84px;
+            color: $white;
+            text-shadow: 2px 2px $red;
+            margin: 0;
+        }
+        button {
+            cursor: pointer;
+            background-color: rgba(0,0,0,0);
+            padding: 0.5em 3em;
+            border: 1px solid $white;
+            border-radius: 10px;
+            margin: 0 0.3em 0.3em 0;
+            text-decoration: none;
+            font-family: $font;
+            font-size: 18px;
+            color: $white;
+            text-align: center;
+            &:hover {
+                box-shadow: 2px 2px $red;
+            }
+        }
+    }
+}
+
+//Large Screen
+@media screen and (max-width: $break-large) {
+    .navBar {
+        background-color: $darkTransparent;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2em;
+        h1 {
+            font-family: $font;
+            font-size: 84px;
+            color: $white;
+            text-shadow: 2px 2px $red;
+            margin: 0;
+        }
+        button {
+            cursor: pointer;
+            background-color: rgba(0,0,0,0);
+            padding: 0.5em 3em;
+            border: 1px solid $white;
+            border-radius: 10px;
+            margin: 0 0.3em 0.3em 0;
+            text-decoration: none;
+            font-family: $font;
+            font-size: 18px;
+            color: $white;
+            text-align: center;
+            &:hover {
+                box-shadow: 2px 2px $red;
+            }
+        }
+    }
+}
+
+//Medium Screen
+@media screen and (max-width: $break-med) {
+    .navBar {
+        background-color: $darkTransparent;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2em;
+        h1 {
+            font-family: $font;
+            font-size: 84px;
+            color: $white;
+            text-shadow: 2px 2px $red;
+            margin: 0;
+        }
+        button {
+            cursor: pointer;
+            background-color: rgba(0,0,0,0);
+            padding: 0.5em 3em;
+            border: 1px solid $white;
+            border-radius: 10px;
+            margin: 0 0.3em 0.3em 0;
+            text-decoration: none;
+            font-family: $font;
+            font-size: 18px;
+            color: $white;
+            text-align: center;
+            &:hover {
+                box-shadow: 2px 2px $red;
+            }
+        }
+    }
+}
+
+//Small Screen
+@media screen and (max-width: $break-small) {
+    .navBar {
+        background-color: $darkTransparent;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em;
+        width: 31em;
+        h1 {
+            font-family: $font;
+            font-size: 84px;
+            color: $white;
+            text-shadow: 2px 2px $red;
+            margin: 0;
+        }
+        button {
+            cursor: pointer;
+            background-color: rgba(0,0,0,0);
+            padding: 0.5em 3em;
+            border: 1px solid $white;
+            border-radius: 10px;
+            margin: 0 0.3em 0.3em 0;
+            text-decoration: none;
+            font-family: $font;
+            font-size: 18px;
+            color: $white;
+            text-align: center;
+            &:hover {
+                box-shadow: 2px 2px $red;
+            }
         }
     }
 }
