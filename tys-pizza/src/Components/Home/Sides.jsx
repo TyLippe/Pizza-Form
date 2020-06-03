@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
 import {addToOrder} from '../../Redux/Actions'
-import sides from '../../Assets/Json/sides.json'
 
 function SideForm(props) {
     const userId = localStorage.userId
@@ -32,7 +31,7 @@ function SideForm(props) {
         <div className='sideDiv'>
             <h2>Sides</h2>
             <form className='sideForm' onSubmit={handleSubmit}>
-                {sides.map(side => {
+                {props.sides.map(side => {
                     return(
                         <div>
                             <label>
