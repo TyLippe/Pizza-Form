@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
 import {addToOrder} from '../../Redux/Actions'
-import drinks from '../../Assets/Json/drinks.json'
 
 function DrinkForm(props) {
     const userId = localStorage.userId
@@ -39,7 +38,7 @@ function DrinkForm(props) {
                     <option value='Bottle'>20 oz Bottle</option>
                     <option value='Can'>8oz Can</option>
                 </select>
-                {drinks.map(drink => {
+                {props.drinks.map(drink => {
                     return(
                         <div>
                             <label>

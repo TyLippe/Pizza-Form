@@ -8,6 +8,10 @@ import PizzaForm from './Pizza'
 import WingForm from './Wings'
 import SideForm from './Sides'
 import DrinkForm from './Drinks'
+import toppings from '../../Assets/Json/toppings.json'
+import sauces from '../../Assets/Json/sauces.json'
+import sides from '../../Assets/Json/sides.json'
+import drinks from '../../Assets/Json/drinks.json'
 import '../../Styles/home.scss'
 
 export default function Home() {
@@ -67,10 +71,10 @@ export default function Home() {
                     </label>
                 </form>
                 <div className='orderDiv'>
-                    {selected.pizza && (<PizzaForm />)}
-                    {selected.wings && (<WingForm />)}
-                    {selected.sides && (<SideForm />)}
-                    {selected.drinks && (<DrinkForm />)}
+                    {selected.pizza && (<PizzaForm toppings={toppings} />)}
+                    {selected.wings && (<WingForm sauces={sauces} />)}
+                    {selected.sides && (<SideForm sides={sides} />)}
+                    {selected.drinks && (<DrinkForm drinks={drinks} />)}
                 </div>
             </div>
             <div className='rightSideDiv'>

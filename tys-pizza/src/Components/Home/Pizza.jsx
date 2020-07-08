@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
 import {addToOrder} from '../../Redux/Actions'
-import toppings from '../../Assets/Json/toppings.json'
 
 function PizzaForm(props) {
     const userId = localStorage.userId
@@ -59,7 +58,7 @@ function PizzaForm(props) {
                     <option value='None'>No Cheese</option>
                 </select>
                 <p>Toppings</p>
-                    {toppings.map(topping => {
+                    {props.toppings.map(topping => {
                         return(
                             <div>
                                 <label>

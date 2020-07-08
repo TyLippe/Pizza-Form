@@ -182,7 +182,7 @@ function Register(props) {
                 </div>
                 </label>
 
-                <select className='stateDropdown'>
+                <select className='stateDropdown' onChange={handleChange} name='state'>
                     {states.map(state => {
                         return(<option value={state.name}>{state.name}</option>)
                     })}

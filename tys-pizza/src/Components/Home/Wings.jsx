@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
 import {addToOrder} from '../../Redux/Actions'
-import sauces from '../../Assets/Json/sauces.json'
 
 function WingForm(props) {
     const userId = localStorage.userId
@@ -53,7 +52,7 @@ function WingForm(props) {
                     />
                     Naked
                 </label>
-                    {sauces.map(sauce => {
+                    {props.sauces.map(sauce => {
                         return(
                             <div>
                                 <label>

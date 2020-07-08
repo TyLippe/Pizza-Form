@@ -53,7 +53,6 @@ function Login(props) {
         props.login(formData)
     }
     
-
     if(props.isLoggedIn){
         setTimeout(() => history.push('/home'), 2000)
     }
